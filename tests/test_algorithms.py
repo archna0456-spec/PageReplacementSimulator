@@ -33,3 +33,19 @@ for step in history:
 
 print("\nTotal Hits:", hits)
 print("Total Page Faults:", faults)
+from algorithms.optimal import optimal
+
+print("\nOptimal Page Replacement")
+print("------------------------")
+
+history, hits, faults = optimal(pages, capacity)
+
+for step in history:
+    print(
+        "Page:", step["page"],
+        "| Frames:", step["frames"],
+        "| Status:", step["status"]
+    )
+
+print("\nTotal Hits:", hits)
+print("Total Page Faults:", faults)
