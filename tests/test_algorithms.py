@@ -17,3 +17,19 @@ for step in history:
 
 print("\nTotal Hits:", hits)
 print("Total Page Faults:", faults)
+from algorithms.lru import lru
+
+print("\nLRU Page Replacement")
+print("--------------------")
+
+history, hits, faults = lru(pages, capacity)
+
+for step in history:
+    print(
+        "Page:", step["page"],
+        "| Frames:", step["frames"],
+        "| Status:", step["status"]
+    )
+
+print("\nTotal Hits:", hits)
+print("Total Page Faults:", faults)
